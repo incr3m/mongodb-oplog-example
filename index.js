@@ -1,6 +1,10 @@
 const MongoOplog = require('mongo-oplog')
 
 const oplog = MongoOplog('mongodb://127.0.0.1:27017/local')
+const RedisSMQ = require("rsmq");
+
+const rsmq = new RedisSMQ( {host: "127.0.0.1", port: 6379, ns: "rsmq"} );
+
 
 oplog.tail();
  
@@ -21,7 +25,9 @@ oplog.on('delete', doc => {
 });
  
 oplog.on('error', error => {
+  console.log('error');
   console.log(error);
+  process.exit(1);
 });
  
 oplog.on('end', () => {

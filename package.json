@@ -5,6 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "lodash.get": "^4.4.2",
-    "mongo-oplog": "^2.1.0"
+    "mongo-oplog": "^2.1.0",
+    "mongo-oplog-reader": "^2.0.0",
+    "redis": "^2.8.0",
+    "rsmq": "^0.8.3"
   }
 }

@@ -1,0 +1,1 @@
+docker-compose exec mongodb mongo --eval 'rs.initiate()'
